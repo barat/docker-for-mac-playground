@@ -1,0 +1,12 @@
+options:
+  verbose: true
+syncs:
+  #IMPORTANT: ensure this name is unique and does not match your other container names
+  docker-mac-sync:
+    src: './'
+    dest: '/test'
+    sync_strategy: 'unison'
+    sync_args:
+      - "-prefer newer"
+      - "-ignore='Path .git'"
+      - "-ignore='BelowPath .git'"

@@ -1,0 +1,13 @@
+version: "2"
+services:
+  mysql-test:
+      image: mysql
+      container_name: 'mysql-test'
+      environment:
+          - MYSQL_ROOT_PASSWORD=passwd
+          - MYSQL_DATABASE=test
+  benchmark:
+      build: ./
+      container_name: 'mysql-test-bench'
+      depends_on:
+          - mysql-test

@@ -1,0 +1,6 @@
+version: "2"
+services:
+  native:
+      image: alpine
+      container_name: 'docker-native'
+      command: time dd if=/dev/zero of=test.dat bs=1024 count=100000

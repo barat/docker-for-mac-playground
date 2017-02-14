@@ -1,0 +1,11 @@
+version: "2"
+services:
+  docker-sync-test:
+    image: alpine
+    container_name: 'docker-sync-mount'
+    volumes:
+        - docker-mac-sync:/test:rw
+    command: /bin/sh -c "cd test && time dd if=/dev/zero of=test.dat bs=1024 count=100000"
+volumes:
+    docker-mac-sync:
+        external: true
